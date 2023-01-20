@@ -2,7 +2,7 @@
 
 // const { getDevice } = require('./getDevice');
 // const convertProntoCode = require('./convertProntoCode')
-const SerialPort = require('serialport');
+const { SerialPort } = require('serialport');
 const port = new SerialPort({
   path: '/dev/ttyACM0',
   baudRate: 115200,

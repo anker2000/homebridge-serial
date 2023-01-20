@@ -1,0 +1,38 @@
+{
+  "name": "homebridge-serial",
+  "version": "3.6.22",
+  "description": "Serial broadcast for homebridge: https://github.com/nfarina/homebridge based on https://github.com/lprhodes/homebridge-broadlink-rm",
+  "license": "ISC",
+  "scripts": {
+    "release": "release-it"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "serial"
+  ],
+  "engines": {
+    "node": ">=7.6.0",
+    "homebridge": ">=0.2.0"
+  },
+  "author": {
+    "name": "anker2000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:anker2000/homebridge-serial.git"
+  },
+  "dependencies": {
+    "broadlinkjs-rm": "^0.7.6",
+    "chai": "^4.2.0",
+    "find-key": "^2.0.1",
+    "github-version-checker": "^1.2.0",
+    "homebridge-platform-helper": "lprhodes/homebridge-platform-helper#feature/typescript",
+    "net-ping": "^1.2.3",
+    "ping": "^0.2.2",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2",
+    "release-it": "^12.4.3"
+  }
+}

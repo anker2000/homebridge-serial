@@ -15,9 +15,9 @@ const setupPing = (log) => {
     });
   } catch (err) {
     if (err.message.includes('was compiled against a different Node.js version')) {
-      log(`Broadlink RM won't detect device failures due to a version conflict with "net-ping". Please run "npm r homebridge-broadlink-rm -g && npm i homebridge-broadlink-rm -g" to resolve.`);
+      log(`Serial won't detect device failures due to a version conflict with "net-ping". Please run "npm r homebridge-broadlink-rm -g && npm i homebridge-broadlink-rm -g" to resolve.`);
     } else if (err.message.includes('Operation not permitted')) {
-      log(`Broadlink RM won't detect device failures due to a permissions issues with "net-ping".\n\nTo fix:\n\n 1. Run "which node" to determine your node path.\n2. Run "sudo setcap cap_net_raw+ep /path/to/node".\n\nNote: Replacing /path/to/node with the path you found in the first step.`);
+      log(`Serial won't detect device failures due to a permissions issues with "net-ping".\n\nTo fix:\n\n 1. Run "which node" to determine your node path.\n2. Run "sudo setcap cap_net_raw+ep /path/to/node".\n\nNote: Replacing /path/to/node with the path you found in the first step.`);
     } else {
       log(err.message);
     }
@@ -34,11 +34,11 @@ const startPing = (device, log) => {
   setInterval(() => {
     ping.pingHost(device.host.address, (error, target) => {
       if (error && device.state === 'active') {
-        log(`Broadlink RM device at ${device.host.address} (${device.host.macAddress || ''}) is no longer reachable. (${target}, ${error.message})`);
+        log(`Serial device at ${device.host.address} (${device.host.macAddress || ''}) is no longer reachable. (${target}, ${error.message})`);
 
         device.state = 'inactive';
       } else if (!error && device.state !== 'active') {
-        if (device.state === 'inactive') log(`Broadlink RM device at ${device.host.address} (${device.host.macAddress || ''}) has been re-discovered.`);
+        if (device.state === 'inactive') log(`Serial device at ${device.host.address} (${device.host.macAddress || ''}) has been re-discovered.`);
 
         device.state = 'active';
       }

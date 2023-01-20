@@ -12,7 +12,7 @@
   "platforms":[
     {
       "platform":"BroadlinkRM",
-      "name":"Broadlink RM",
+      "name":"Serial",
       "accessories":[
         {
           "name":"Auto-off Switch",

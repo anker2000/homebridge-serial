@@ -422,7 +422,7 @@ class AirConAccessory extends BroadlinkRMAccessory {
       return;
     }
 
-    // Read temperature from Broadlink RM device
+    // Read temperature from Serial device
     // If the device is no longer available, use previous tempeature 
     const device = getDevice({ host, log });
 

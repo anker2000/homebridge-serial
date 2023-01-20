@@ -12,7 +12,7 @@
   "platforms":[
     {
       "platform":"BroadlinkRM",
-      "name":"Broadlink RM",
+      "name":"Serial",
       "hideScanFrequencyButton": false,
       "hideLearnButton": false,
       "hideWelcomeMessage": false,

@@ -66,7 +66,7 @@ const BroadlinkRMPlatform = class extends HomebridgePlatform {
 
       if (!accessory.type) throw new Error(`Each accessory must be configured with a "type". e.g. "switch"`);
 
-      if (!classTypes[accessory.type]) throw new Error(`homebridge-broadlink-rm doesn't support accessories of type "${accessory.type}".`);
+      if (!classTypes[accessory.type]) throw new Error(`homebridge-serial doesn't support accessories of type "${accessory.type}".`);
 
       const homeKitAccessory = new classTypes[accessory.type](log, accessory);
 
@@ -79,7 +79,7 @@ const BroadlinkRMPlatform = class extends HomebridgePlatform {
     const { debug, hosts } = config;
 
     if (!hosts) {
-      log(`\x1b[35m[INFO]\x1b[0m Automatically discovering Broadlink RM devices.`)
+      log(`\x1b[35m[INFO]\x1b[0m Automatically discovering Serial devices.`)
       discoverDevices(true, log, debug, config.deviceDiscoveryTimeout);
 
       return;
@@ -87,7 +87,7 @@ const BroadlinkRMPlatform = class extends HomebridgePlatform {
     
     discoverDevices(false, log, debug);
 
-    log(`\x1b[35m[INFO]\x1b[0m Automatic Broadlink RM device discovery has been disabled as the "hosts" option has been set.`)
+    log(`\x1b[35m[INFO]\x1b[0m Automatic Serial discovery has been disabled as the "hosts" option has been set.`)
 
     assert.isArray(hosts, `\x1b[31m[CONFIG ERROR] \x1b[33mhosts\x1b[0m should be an array of objects.`)
       
@@ -108,7 +108,7 @@ const BroadlinkRMPlatform = class extends HomebridgePlatform {
     const { config, log } = this;
 
     if (config && (config.hideWelcomeMessage || config.isUnitTest)) {
-      log(`\x1b[35m[INFO]\x1b[0m Running Homebridge Broadlink RM Plugin version \x1b[32m${npmPackage.version}\x1b[0m`)
+      log(`\x1b[35m[INFO]\x1b[0m Running Homebridge Serial Plugin version \x1b[32m${npmPackage.version}\x1b[0m`)
 
       return
     }
@@ -116,7 +116,7 @@ const BroadlinkRMPlatform = class extends HomebridgePlatform {
     setTimeout(() => {
       log('')
       log(`**************************************************************************************************************`)
-      log(`** Welcome to version \x1b[32m${npmPackage.version}\x1b[0m of the \x1b[34mHomebridge Broadlink RM Plugin\x1b[0m!`)
+      log(`** Welcome to version \x1b[32m${npmPackage.version}\x1b[0m of the \x1b[34mHomebridge Serial Plugin\x1b[0m!`)
       log('** ')
       log(`** Find out what's in the latest release here: \x1b[4mhttps://github.com/lprhodes/homebridge-broadlink-rm/releases\x1b[0m`)
       log(`** `)
